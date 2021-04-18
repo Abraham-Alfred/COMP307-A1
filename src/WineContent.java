@@ -1,7 +1,7 @@
 import java.util.List;
 
 /**
- *  Class which handles the data storage for the training data list
+ *  Class which handles the data storage for the training data list.
  *
  * @author Abraham Alfred 300509598
  **/
@@ -13,7 +13,7 @@ public class WineContent {
     private int labelGuess = 0;
 
     /**
-     * Constructor for the WineContent Class
+     * Constructor for the WineContent Class.
      *
      * @param data data
      * @param num num
@@ -45,8 +45,9 @@ public class WineContent {
     //============================================================
     // Getters and setters.
     //============================================================
+
     /**
-     *  Getter for the dataList arraylist.
+     * Getter for the dataList arraylist.
      *
      * @return double getDataList
      **/
@@ -55,7 +56,7 @@ public class WineContent {
     }
 
     /**
-     *  Getter for double dist
+     * Getter for double dist.
      *
      * @return double getDist
      **/
@@ -64,7 +65,7 @@ public class WineContent {
     }
 
     /**
-     *  Getter for int classNumber
+     * Getter for int classNumber.
      *
      * @return double getClassNumber
      **/
@@ -73,14 +74,14 @@ public class WineContent {
     }
 
     /**
-     * Getter for int labelGuess
+     * Getter for int labelGuess.
      *
      * @return int labelGuess
      **/
     public int getLabelGuess() { return labelGuess; }
 
     /**
-     * Setter for int labelGuess
+     * Setter for int labelGuess.
      *
      * @param labelGuess labelGuess
      **/
