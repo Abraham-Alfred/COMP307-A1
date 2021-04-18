@@ -40,8 +40,11 @@ public class FeatureSet {
         return (sum >= 2) ? 1:0; //ternary operator
     }
 
+    /**
+     * toString method for the feature.
+     **/
     public String toString() {
-        String str = "Feature: ";
+        String str = "feature: ";
         str += Arrays.toString(row);
         str += Arrays.toString(col);
         str += Arrays.toString(sgn);
