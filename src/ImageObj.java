@@ -1,35 +1,55 @@
-import java.util.List;
+import java.util.Arrays;
 
 /**
- * This class handles the storage for
+ * This class handles the features for
  * the "image.data" file.
  *
  * @author alfredabra 300509598
  **/
 
-public class ImageObj {
-    private String firstLine;
-    private String secondLine;
-    private int row;
-    private int col;
-    private boolean[][] pixelArr;
-    private List<Integer> featureVector;
+public class FeatureSet {
+    int[] row;
+    int[] col;
+    boolean[] sgn;
 
     /**
      * Constructor for the ImageObj class.
      *
-     * @param fL fL
-     * @param sL sL
      * @param r r
      * @param c c
-     * @param pA pA
+     * @param b b
      **/
-    public ImageObj(String fL, String sL, int r, int c, boolean[][] pA) {
-        firstLine = fL;
-        secondLine = sL;
+    public FeatureSet(int[] r, int[] c, boolean[] b) {
         row = r;
-        col = r;
-        pixelArr = pA;
+        col = c;
+        sgn = b;
+    }
+
+    /**
+     * The value of the feature for a given image
+     * (represented as a 2D Boolean array).
+     *
+     * @param img img
+     **/
+    public int value(boolean[][] img) {
+        int sum = 0;
+        for(int i = 0; i < 3; i++)
+            if (img[row[i]] [col[i]] == sgn[i]){
+                sum++;
+            }
+        return (sum >= 2) ? 1:0; //ternary operator
+    }
+
+    /**
+     * toString method for the feature.
+     **/
+    public String toString() {
+        String str = "feature: ";
+        str += Arrays.toString(row);
+        str += Arrays.toString(col);
+        str += Arrays.toString(sgn);
+
+        return str;
     }
 
     // ============================================================
@@ -37,110 +57,44 @@ public class ImageObj {
     // ============================================================
 
     /**
-     * Getter for FirstLine.
-     *
-     * @return firstLine firstLine
-     **/
-    public String getFirstLine() {
-        return firstLine;
-    }
-
-    /**
-     * Setter for FirstLine.
-     *
-     * @param firstLine firstLine
-     **/
-    public void setFirstLine(String firstLine) {
-        this.firstLine = firstLine;
-    }
-
-    /**
-     * Getter for SecondLine.
-     *
-     * @return secondLine secondLine
-     **/
-    public String getSecondLine() {
-        return secondLine;
-    }
-
-    /**
-     * Setter for SecondLine.
-     *
-     * @param secondLine secondLine
-     **/
-    public void setSecondLine(String secondLine) {
-        this.secondLine = secondLine;
-    }
-
-    /**
      * Getter for row.
      *
-     * @return row row
+     * @return row
      **/
-    public int getRow() {
-        return row;
-    }
+    public int[] getRow() { return row; }
 
     /**
      * Setter for row.
      *
      * @param row row
      **/
-    public void setRow(int row) {
-        this.row = row;
-    }
+    public void setRow(int[] row) { this.row = row; }
 
     /**
      * Getter for col.
      *
-     * @return col col
+     * @return col
      **/
-    public int getCol() {
-        return col;
-    }
+    public int[] getCol() { return col; }
 
     /**
      * Setter for col.
      *
      * @param col col
      **/
-    public void setCol(int col) {
-        this.col = col;
-    }
+    public void setCol(int[] col) { this.col = col; }
 
     /**
-     * Getter for PixelArr.
+     * Getter for sgn.
      *
-     * @return pixelArr pixelArr
+     * @return sgn
      **/
-    public boolean[][] getPixelArr() {
-        return pixelArr;
-    }
+    public boolean[] getSgn() { return sgn; }
 
     /**
-     * Setter for PixelArr.
+     * Setter for sgn.
      *
-     * @param pixelArr pixelArr
+     * @param sgn sgn
      **/
-    public void setPixelArr(boolean[][] pixelArr) {
-        this.pixelArr = pixelArr;
-    }
-
-    /**
-     * Getter for FeatureVector.
-     *
-     * @return featureVector featureVector
-     **/
-    public List<Integer> getFeatureVector() {
-        return featureVector;
-    }
-
-    /**
-     * Setter for FeatureVector.
-     *
-     * @param featureVector featureVector
-     **/
-    public void setFeatureVector(List<Integer> featureVector) {
-        this.featureVector = featureVector;
-    }
+    public void setSgn(boolean[] sgn) { this.sgn = sgn; }
 }
