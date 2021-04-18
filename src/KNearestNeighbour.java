@@ -3,9 +3,10 @@ import java.io.FileReader;
 import java.util.*;
 
 /**
-*   Main class for k-Nearest Neighbour (Part 1) for assignment 1.
-*   Finds the nearest neighbour for k.
-*   @author alfredabra 300509598
+ * Main class for k-Nearest Neighbour (Part 1) for assignment 1.
+ * Finds the nearest neighbour for k.
+ *
+ * @author alfredabra 300509598
 **/
 
 public class KNearestNeighbour {
@@ -17,7 +18,8 @@ public class KNearestNeighbour {
 
     /**
      * Main method for the KNearestNeighbour class.
-     * Includes the load function for both training and testing dataset.
+     * Includes the load function for
+     * both training and testing dataset.
      *
      * @param args args
      **/
@@ -100,8 +102,8 @@ public class KNearestNeighbour {
     }
 
     /**
-     * Comparator to sort between the training dataset
-     *
+     * Comparator to sort between
+     * the training dataset.
      **/
     public static void dataSort() {
         winConTrainHolder.sort(Comparator.comparingDouble(WineContent::getDist));
@@ -117,8 +119,8 @@ public class KNearestNeighbour {
     }
 
     /**
-     * Method to loop through the training and testing data
-     *
+     * Method to loop through
+     * the training and testing data.
      **/
     public static void classifierLoop() {
         for(WineContent testContent : winConTestHolder) {
@@ -137,8 +139,8 @@ public class KNearestNeighbour {
     }
 
     /**
-     * Method to find ranges through the columns in the training dataset
-     *
+     * Method to find ranges through
+     * the columns in the training dataset.
      **/
     public static void colRangeFinder() {
         for (int i = 0; i < features; i++) {
