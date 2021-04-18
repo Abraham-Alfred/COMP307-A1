@@ -2,7 +2,7 @@
 
 **Assignment 1 for COMP307/AIML420**
 
-- This was my first assignment for COMP307 Introduction to Artificial Intelligence. 
+- This was my first assignment for COMP307-Introduction to Artificial Intelligence. 
 
 ________
 
